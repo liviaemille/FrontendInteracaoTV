@@ -1,0 +1,30 @@
+Configurando o projeto pela primeira vez:
+
+- wsl
+- cd ~
+- sudo apt update
+- sudo apt upgrade
+- comando do gitlab
+- sudo service postgresql start
+- sudo -i -u postgres
+- psql
+- comando do gitlab
+- \q
+- exit
+- git clone repositorio https
+- virtualenv <nome da venv> -p python3
+- source <venv>/bin/activate
+- cd interação-2/
+- pip install -r bibliotecas.txt
+- python manage.py migrate
+- python manage.py runserver
+
+
+Iniciando o projeto outras vezes:
+
+- wsl
+- cd ~
+- sudo service postgresql start
+- source <venv>/bin/activate
+- cd interação-2/
+- python manage.py runserver
