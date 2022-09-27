@@ -4,6 +4,7 @@
      border: 0%;
  }
 
+
  /*efeitos de transicao*/
  .blocotransicao{
      position: absolute;
@@ -20,40 +21,49 @@
      width: 19%;
  }
 
- /* plano de fundo */
+
+
+ /* background todas as telas */
  .conteiner {
     position: absolute;
     height: 100vh;
     width: 100vw;
     background-repeat: no-repeat;
  }
+
  .gradiente-instagram{
     background: #f09433;  
     background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
     height: 100vh;
     width: 100vw;
  }
+
  .rss {
     background-color:rgb(226, 129, 65);
     height: 100vh;
  }
+
  .twitter {
      background-color: #daf4fd;
  }
+
+
+
  /* cabeçalho fixo (logo if + relogio) */
  .fixo {
     position: relative;
-    width: 10vw;
-    height: 41vh;
+    width: 12vw;
+    height: 50vh;
     left: 85vw;
     top: 10vh; 
-
  }
+
  .logo {
     position: absolute;
     left: 15%;
     width: 75%;
  }
+
  .logo img{
     width: 100%;
     filter: drop-shadow(7px 7px 2px rgba(34, 34, 34, 0.76));
@@ -71,8 +81,8 @@
     left: 10%;
     top: 58%;
     text-align: center;
-    
  }
+
  .diadata {
     margin: 0;
     border: 0;
@@ -82,11 +92,13 @@
     padding-left: 9px;
     padding-right: 9px;
  }
+
  .hora {
     margin: 0;
     border: 0;
     font-size: 17pt;
  }
+
 
  
  /* logo rede social */
@@ -95,12 +107,19 @@
      top: 77%;
      width: 8vw;
      left: 4%;
-
  }
+
  .logocanto img{
+    filter: drop-shadow(4px 2px 1px rgba(34, 34, 34, 0.76));
      width: 100%;
      height: 100%;
  }
+
+ .logorss{
+    transform: rotate(47deg);
+}
+
+
 
  /* mural das publicações do Istagram*/
  .mural {
@@ -109,10 +128,80 @@
      width: 65%;
      left: 49%;
      top: 47%;
-     height: 70%;
+     height: 67%;
      transform: translate(-50%, -50%);
  }
- /*.perfilinstagram{
+ 
+ .legenda{
+    text-align: justify;
+    background-color: white;
+    position: absolute;
+    display: inline-block;
+    padding: 3%;
+    width: 42%;
+    left: 52%;
+    min-height: 50%;
+    max-height: 100%;
+    border-radius: 10px;
+    font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+    /*font-size: clamp(1em, 1em + 1vw, 1.1em); 
+    top: 2%;*/
+ }
+
+ .curtidas p{
+     width: 50%;
+     display: inline-block;
+     margin-top: 0;
+     font-size: 10pt;
+     transform: translateY(-30%);
+ }
+
+ .iconecurtidas{
+     width: 5%;
+     height: 4%;
+     /*background-color: #f09433;*/
+     display: inline-block;
+ }
+
+ .iconecurtidas img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+ }
+
+ .publicacao {
+    position: absolute;
+    display: inline-block;
+    width: 49%;
+    height: 100%;
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-color: white;
+    border-style: solid;
+    border-width: 5px;
+    /*top: 2%;*/
+ }
+
+ .shadow {
+    box-shadow: 6px 5px 4px 0px rgba(34, 34, 34, 0.76);
+ }
+
+ /*.foto {
+     width: 100%;
+     transform: translate(-50%, -50%);
+     top: 50%;
+     left: 50%;    
+ }
+
+ .foto img {
+    position: relative;
+    max-width:100%;
+    max-height:100%;
+    object-fit: fill;
+ }
+ 
+ .perfilinstagram{
      width: 10%;
      height: 9%;
      position: relative;
@@ -123,67 +212,16 @@
      padding-bottom: 0;
      border-bottom: 0;
  }
+
  .perfilinstagram img{
      width: 100%;
      height: 100%;
      border-radius: 50%;
  }*/
- .legenda{
-     text-align: justify;
-     background-color: white;
-     position: absolute;
-     display: inline-block;
-     padding: 2%;
-     width: 42%;
-     left: 51%;
-     min-height: 50%;
-     max-height: 100%;
-     /*top: 2%;*/
-     border-radius: 10px;
-    /* font-size: clamp(1em, 1em + 1vw, 1.1em); */
-    font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
- }
- .curtidas p{
-     width: 50%;
-     display: inline-block;
-     margin-top: 0;
-     font-size: 10pt;
-     transform: translateY(-30%);
- }
- .iconecurtidas{
-     width: 5%;
-     height: 4%;
-     /*background-color: #f09433;*/
-     display: inline-block;
- }
- .iconecurtidas img{
-     position: relative;
-    width: 100%;
-    height: 100%;
- }
- .publicacao {
-    position: absolute;
-    display: inline-block;
-    background-color: white;
-    width: 50%;
-    height: 100%;
-    border-radius: 10px;
-    /*top: 2%;*/
- }
- .foto {
-     position: relative;
-     width: 100%;
-     transform: translate(-50%, -50%);
-     top: 50%;
-     left: 50%;
-     /*background-color: blanchedalmond;*/
- }
- .foto img {
-     height: 100%;
-     width: 100%;
- }
 
- /* mural de noticias RSS */
+
+
+ /*RSS */
  .muralnoticias {
      position: absolute;
      transform: translateX(-50%);
@@ -192,17 +230,17 @@
      top: 8vh;
     color: white;
  }
- .logorss{
-     transform: rotate(47deg);
- }
+
  .titulonoticia{
      text-align: center;
  }
+
  .links{
      padding-left: 5%;
      padding-top: 5%;
      font-size: 20px;
  }
+
  .qrcode {
      width: 10vw;
      height: 20vh;
@@ -210,12 +248,15 @@
      left: 85vw;
      top: 75vh;
  }
+
  .qrcode img{
      width: 100%;
      height: 100%;
  }
 
- /* Mural Twitter tela 4 */
+
+
+ /* Mural Twitter */
 .muraltwitter {
     /*background-color: white;*/
     position: absolute;
@@ -226,22 +267,20 @@
     font-size: 22px;
     font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
 }
+
 .fotoperfil {
-    filter: drop-shadow(7px 1px 7px rgba(34, 34, 34, 0.76));
+    box-shadow: 4px 3px 4px 0px rgba(34, 34, 34, 0.76);
     /*background-color: #d8e0b6;*/
     width: 10%;
-    height: 100%;
     border-radius: 50%;
     display: inline-block;
     position: relative;
     top: 18%;
-    left: 6%;
-
- }
- .fotoperfil img {
-     height: 100%;
-     width: 100%;
-     border-radius: 50%;
+    left: 5%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 110%;
+    width: 11%;
  }
 
 .tweet {
@@ -251,13 +290,15 @@
     position: absolute;
     width: 80%;
     left: 60%;
-    margin-top:10%;
+    top: 47%;
 }
+
 .perfil {
-    /*background-color:rgb(226, 129, 65);*/
     width: 100%;
     height: 20%;
+    /*background-color:rgb(226, 129, 65);*/
 }
+
 .usuario {
     position: relative;
     display: inline-block;
@@ -267,8 +308,32 @@
     transform: translateY(-85%);
     font-size: 16pt;
 }
+
 .user {
     color: rgb(68, 68, 68)
 }
 
+/*.fotoperfil img {
+     height: 100%;
+     width: 100%;
+     border-radius: 50%;
+ }*/
+
+
  
+/*Formatação textos js*/
+.hashtag {
+    color: #800020;
+}
+    /*Twitter*/
+.mention {
+    color: #2b7bb9;
+}
+
+    /*Instagram*/
+.hashtag_instagram {
+    color: #b80f17;
+}
+.mention_instagram {
+    color: #0047b1;
+}

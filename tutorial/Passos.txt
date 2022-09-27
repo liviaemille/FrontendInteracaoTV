@@ -1,0 +1,8 @@
+1 - Redimensionar imagens post intagram (ok)
+2 - Redimensionar imagem perfil twitter (ok)
+3 - Formatação de texto publicação Instagram (ok)
+4 - Formatação de texto publicação twitter (ok)
+5 - Animação de transição da tela twitter (ok)
+6 - Animação de transição de rss -
+7 - Animação de transição instagram -
+8 - Animação de transição index -
