@@ -285,12 +285,15 @@
 
 .tweet {
     text-align: justify;
-    /*background-color: #d8e0b6;*/
+    background-color: #fff;
     transform: translate(-50%, -50%);
     position: absolute;
     width: 80%;
     left: 60%;
     top: 47%;
+    padding: 100px 50px;
+    border: 1px solid;
+    border-radius: 15px;
 }
 
 .perfil {

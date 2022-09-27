@@ -1,9 +1,5 @@
 function time() {
 
-    //$(".logotransicao").animate({width: "30%"}, 1500, function(){
-    //   $(".blocotransicao").fadeOut(700)
-    //});
-
     const d = new Date();
 
     //Dia da semana por extenso em portugues
@@ -37,24 +33,21 @@ function time() {
 
 //Função para procurar publicações dentro do body e iniciar animações e formatação de texto
 function iniciar() {
-    let posts = ["@livinhadograu  #Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", "when an unknown printer took a galley of type and scrambled it to make a type specimen book."]
+    let posts = ["@livinhadograu  #Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", "Lorehgjm Ipsum has been the industry's standard dummy text ever since the 1500s", "when an unknown printer took a galley of type and scrambled it to make a type specimen book."]
 
-    $('body').find('.post').each(function () {
+    $('body').find('.conteiner').each(function () {
         var div = this;
         iniciarAnimation($(div), posts);
-
     });
-    setTimeout('iniciar()', 15000);
+
+    setTimeout('iniciar()', 2000);
 }
 
 
 //Enviando os parametros certos para a função replace_text
 function iniciarAnimation(div, posts) {
     div.show();
-    var img = "gatinho.jpg"
-    //twitter
-
-
+    // Trata postagens do twitter
     current = posts.indexOf($("#twittexto").text()) + 1
     if (current === -1) {
         current = 0
@@ -65,13 +58,14 @@ function iniciarAnimation(div, posts) {
         replace_text(this, false);
     });
 
-    //instagram
+    // Trata postagens do instagram
+    current = posts.indexOf($("#instatexto").text()) + 1
+    if (current === -1) {
+        current = 0
+    }
     div.find('.textopost').each(function () {
         replace_text(this, true);
     });
-    //$('body').find('.image').hide()
-
-    //.css({"background-image": "url(img/gatinho.jpg)"})
 
 }
 
