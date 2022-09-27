@@ -1,9 +1,9 @@
 function time(){
     start()
 
-    $(".logotransicao").animate({width: "30%"}, 1500, function(){
-        $(".blocotransicao").fadeOut(700)
-    });
+   //$(".logotransicao").animate({width: "30%"}, 1500, function(){
+     //   $(".blocotransicao").fadeOut(700)
+    //});
 
     const d = new Date();  
 
@@ -39,15 +39,23 @@ function time(){
 //Função para procurar publicações dentro do body e iniciar animações e formatação de texto
 function start(){
     $('body').find('.post').each(function(){
-    var div = this;
+      var div = this;
     iniciarAnimation($(div));
     });
+
+   /* $('body').find('.muralnoticias').each(function(){
+        $('.titulonoticia').animate({left: '100%'}).hide()
+    })*/
+
+    $(document).ready(function(){
+        $()
+    })
 }
 
 //Enviando os parametros certos para a função replace_text
 function iniciarAnimation(div){
     div.show();
-
+    var img = "gatinho.jpg"
     //twitter
     div.find('.text').each(function(){
         replace_text(this,false);
@@ -57,6 +65,9 @@ function iniciarAnimation(div){
     div.find('.textopost').each(function(){
         replace_text(this,true);
     });
+    //$('body').find('.image').hide()
+    
+    //.css({"background-image": "url(img/gatinho.jpg)"})
 }
 
 //Função para pegar conteúdo texto dos posts e enviar para as respectivas funções de formatação
@@ -87,18 +98,3 @@ function highlight_instagram(words) {
 
     return words;
 }
-
-/*$("#baackgoundrss").css('background-image', 'url(' + urlimagerss +')').promise().done(function(){
-    $(this).animate({
-        opacity: 1
-    }, 600)
-});
-
-var bloco = $("#blocotransicao");
-    bloco.fadeOut(3000);
-        {top: "100%"}, 2500, function(){
-        $(this).hide()
-    }
- );*/
-
-

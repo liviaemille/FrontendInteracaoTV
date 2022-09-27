@@ -52,8 +52,8 @@
  /* cabeçalho fixo (logo if + relogio) */
  .fixo {
     position: relative;
-    width: 10vw;
-    height: 41vh;
+    width: 12vw;
+    height: 50vh;
     left: 85vw;
     top: 10vh; 
  }
@@ -332,8 +332,8 @@
 
     /*Instagram*/
 .hashtag_instagram {
-    color: #0000B1;
+    color: #b80f17;
 }
 .mention_instagram {
-    color: #B17D00;
+    color: #0047b1;
 }
