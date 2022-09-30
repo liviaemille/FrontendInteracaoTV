@@ -53,6 +53,17 @@ function iniciar() {
     }
     ];
     let usuarioInstagram = ["@liviaemille", "@mariosoares", "@toinhabigshoes"];
+    let noticiasRSS = [{
+        "Titulo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Conteudo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Background": "img/paisagem.jpg"
+    },
+    {
+        "Titulo" : "Morbi ullamcorper leo mi, non vulputate ipsum volutpat et.",
+        "Conteudo" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Background" : "img/paisagem2.jpg"
+    }
+];
     $('body').find('.conteiner').each(function () {
         var div = this;
         iniciarAnimation($(div), posts);
@@ -85,6 +96,7 @@ function iniciarAnimation(div, posts) {
         replace_text(this, true);
     });
 
+    // Transições RSS
     div.find('.titulonoticia').each(function(){
         $(this).animate(
             {left: '300pxu'},
