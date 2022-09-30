@@ -33,8 +33,26 @@ function time() {
 
 //Função para procurar publicações dentro do body e iniciar animações e formatação de texto
 function iniciar() {
-    let posts = ["@livinhadograu  #Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", "Lorehgjm Ipsum has been the industry's standard dummy text ever since the 1500s", "when an unknown printer took a galley of type and scrambled it to make a type specimen book."]
-
+    let usuarioTwitter = [{
+        "Nome": "Livia Émille",
+        "User": "@liviaemille",
+        "URLfoto" : "img/aslam.jpg",
+        "posts" : ["@livinhadograu  dlakjskdlajdf sdlkaj s ldkjaklsdjaljd alksdjlaksjd açlsdaçskdjaç sldkjaçsdlka #Lorem Ipsum is simply dummy text of the printing and typesetting industry."]
+    },
+    {
+        "Nome": "Mario Soares",
+        "User": "@mariosoares",
+        "URLfoto" : "img/gatinho.jpg",
+        "posts" : ["Lorehgjm Ipsum has been the industry's standard dummy text ever since the 1500s"]
+    }, 
+    {
+        "Nome": "Maria Antônia",
+        "User": "@mariaantonia",
+        "URLfoto": "img/curtida.png",
+        "posts" : ["when an unknown printer took a galley of type and scrambled it to make a type specimen book."]
+    }
+    ];
+    let usuarioInstagram = ["@liviaemille", "@mariosoares", "@toinhabigshoes"];
     $('body').find('.conteiner').each(function () {
         var div = this;
         iniciarAnimation($(div), posts);
@@ -66,6 +84,13 @@ function iniciarAnimation(div, posts) {
     div.find('.textopost').each(function () {
         replace_text(this, true);
     });
+
+    div.find('.titulonoticia').each(function(){
+        $(this).animate(
+            {left: '300pxu'},
+            "slow"
+        )
+    })
 
 }
 

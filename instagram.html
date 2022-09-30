@@ -11,13 +11,12 @@
         <script type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript" src="js/jquery.js"></script>
     </head>
-    <body onload="time()" class="gradiente-instagram">
-        <div class="conteiner">    
+    <body onload="time()" >
+        <div class="conteiner bginstagram">  
+        <!-- Parte fixa: logo if + relógio -->  
             <div class= "fixo">
                 <div class="logo">
                     <img src="img/logoif.png"  alt="">
-                    <!--<p>@logoifrn</p>
-                    <p>23 curtidas</p>!-->
                 </div>
                 <div class="relogio" id="relogio">
                     <div class= "diadata" id="diadata"></div>
@@ -28,23 +27,16 @@
             <!-- Publicação do instagram -->
             <div class="mural">
                 <div class="publicacao" style="background-color: white ;"></div>
-                <div class="shadow publicacao" id="image" style="background-image: url(img/aslam.jpg);">
-                    <!--<div class="perfilinstagram"><img src="img/aslam.jpg" alt=""></div>
-                    <div class="foto" >
-                        <img src="img/gatinho.jpg" alt="">
-                    </div>-->
-                    
-                </div>
+                <div class="shadow publicacao" id="image" style="background-image: url(img/aslam.jpg);"></div>
+
                 <div class="shadow legenda post" id="legenda">
                     <p class="user"><b>@userinstagram</b></p>
                     <p id="instatexto">@maria #hashtag ipsum dolor sit amet, consectetur adipiscing elit. Fusce faucibus turpis id massa ultricies fringilla. Cras massa dolor, tempus nec ullamcorper at, consequat sed odio. Vivamus vel purus luctus, sollicitudin mi ac, luctus justo. Mauris consequat molestie leo id efficitur. Cras fermentum, quam ac fermentum gravida, tortor elit tempus sem, nec gravida risus lacus non arcu. Nullam pellentesque, nisi eget laoreet scelerisque, lorem nulla suscipit eros, quis aliquam leo nisi a eros.</p>
-                    <div class="insights">
-                        <div class="curtidas">
-                            <div class="iconecurtidas">
-                                <img src="img/curtida.png" alt="">
-                            </div>
-                            <p>11k curtidas</p>
+                    <div>
+                        <div class="iconecurtidas">
+                            <img src="img/curtida.png" alt="">
                         </div>
+                        <p class="curtidas">11k curtidas</p>
                     </div>
                 </div>
                
