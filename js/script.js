@@ -72,19 +72,22 @@ function iniciar() {
     let noticiasRSS = [{
         "Titulo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "Conteudo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Background": "img/paisagem.jpg"
+        "Background": "img/paisagem.jpg",
+        "QRcode" : "img/gatinho.jpg"
     },
     {
         "Titulo" : "Morbi ullamcorper leo mi, non vulputate ipsum volutpat et.",
         "Conteudo" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "Background" : "img/paisagem2.jpg"
+        "Background" : "img/paisagem2.jpg",
+        "QRcode" : "img/qrcodeteste.png"
     }
 ];
     $('body').find('.conteiner').each(function () {
         let div = this;
+        let indicerss = Math.floor(Math.random() * noticiasRSS.length);
         let indiceins = Math.floor(Math.random() * usuarioInstagram.length);
         let indicetwi = Math.floor(Math.random() * usuarioTwitter.length);
-        iniciarAnimation($(div), usuarioTwitter, indicetwi, usuarioInstagram, indiceins);
+        iniciarAnimation($(div), usuarioTwitter, indicetwi, usuarioInstagram, indiceins, noticiasRSS, indicerss);
     });
 
     setTimeout('iniciar()', 2000);
@@ -92,12 +95,12 @@ function iniciar() {
 
 
 //Enviando os parametros certos para a função replace_text
-function iniciarAnimation(div, objt, indicet, obji, indicei) {
+function iniciarAnimation(div, objt, indicet, obji, indicei, objr, indicer) {
     div.show();
     // Trata postagens do twitter
     div.find(".muraltwitter").each(function(){
-        $("#username").html(objt[indicet]["User"])
-        $("#nome_do_usuario").html(objt[indicet]["Nome"])
+        $("#username").html(objt[indicet]["User"]);
+        $("#nome_do_usuario").html(objt[indicet]["Nome"]);
         $("#twittexto").html(objt[indicet]["posts"][Math.floor(Math.random() * objt[indicet]["posts"].length)]);
         $('#fotoperfil').css("background-image", "url("+objt[indicet]['URLfoto']+")");
 
@@ -120,13 +123,12 @@ function iniciarAnimation(div, objt, indicet, obji, indicei) {
     
 
     // Transições RSS
-    div.find('.titulonoticia').each(function(){
-        $(this).animate(
-            {left: '300pxu'},
-            "slow"
-        )
+    div.find('.muralnoticias').each(function(){
+        $('#titulonoticia').html(objr[indicer]["Titulo"]);
+        $('#links').html(objr[indicer]["Conteudo"]);
+        $('.qrcode').css("background-image", "url("+objr[indicer]["QRcode"]+")")
+        $('.bgrss').css("background-image", "url("+objr[indicer]["Background"]+")")
     })
-
 }
 
 //Função para pegar conteúdo texto dos posts e enviar para as respectivas funções de formatação

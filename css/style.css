@@ -38,7 +38,8 @@
  }
 
  .bgrss {
-    background-color:rgb(226, 129, 65);
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 100vh;
  }
 
@@ -209,11 +210,8 @@
      position: absolute;
      left: 85vw;
      top: 75vh;
- }
-
- .qrcode img{
-     width: 100%;
-     height: 100%;
+     background-size: cover;
+    background-repeat: no-repeat;
  }
 
 
