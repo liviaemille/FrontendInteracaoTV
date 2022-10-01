@@ -37,19 +37,19 @@ function iniciar() {
         "Nome": "Livia Émille",
         "User": "@liviaemille",
         "URLfoto" : "img/aslam.jpg",
-        "posts" : ["@livinhadograu  dlakjskdlajdf sdlkaj s ldkjaklsdjaljd alksdjlaksjd açlsdaçskdjaç sldkjaçsdlka #Lorem Ipsum is simply dummy text of the printing and typesetting industry."]
+        "posts" : "@livinhadograu  dlakjskdlajdf sdlkaj s ldkjaklsdjaljd alksdjlaksjd açlsdaçskdjaç sldkjaçsdlka #Lorem Ipsum is simply dummy text of the printing and typesetting industry."
     },
     {
         "Nome": "Mario Soares",
         "User": "@mariosoares",
         "URLfoto" : "img/gatinho.jpg",
-        "posts" : ["Lorehgjm Ipsum has been the industry's standard dummy text ever since the 1500s"]
+        "posts" : "Lorehgjm Ipsum has been the industry's standard dummy text ever since the 1500s"
     }, 
     {
         "Nome": "Maria Antônia",
         "User": "@mariaantonia",
         "URLfoto": "img/curtida.png",
-        "posts" : ["when an unknown printer took a galley of type and scrambled it to make a type specimen book."]
+        "posts" : "when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     }
     ];
     let usuarioInstagram = ["@liviaemille", "@mariosoares", "@toinhabigshoes"];
@@ -83,7 +83,7 @@ function iniciarAnimation(div, posts) {
     }
 
     div.find('.text').each(function () {
-        $("#twittexto").html(posts[current]);
+        $("# twittexto").html(posts[current]);
         replace_text(this, false);
     });
 
