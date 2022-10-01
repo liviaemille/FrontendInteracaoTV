@@ -81,6 +81,10 @@ function iniciarAnimation(div, obj, indice) {
     $("#username").html(obj[indice]["User"])
     $("#nome_do_usuario").html(obj[indice]["Nome"])
     $("#twittexto").html(obj[indice]["posts"][Math.floor(Math.random() * obj[indice]["posts"].length)]);
+    $('#fotoperfil').css("background-image", "url("+obj[indice]['URLfoto']+")");
+    div.find('#twittexto').each(function(){
+        replace_text(this, false);
+    })
 
 
     // Trata postagens do instagram
