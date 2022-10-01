@@ -11,7 +11,7 @@
         <script type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript" src="js/jquery.js"></script>
     </head>
-    <body onload="time()" >
+    <body onload="time(); iniciar()" >
         <div class="conteiner bginstagram">  
         <!-- Parte fixa: logo if + relógio -->  
             <div class= "fixo">
@@ -30,8 +30,8 @@
                 <div class="shadow publicacao" id="image" style="background-image: url(img/aslam.jpg);"></div>
 
                 <div class="shadow legenda post" id="legenda">
-                    <p class="user"><b>@userinstagram</b></p>
-                    <p id="instatexto">@maria #hashtag ipsum dolor sit amet, consectetur adipiscing elit. Fusce faucibus turpis id massa ultricies fringilla. Cras massa dolor, tempus nec ullamcorper at, consequat sed odio. Vivamus vel purus luctus, sollicitudin mi ac, luctus justo. Mauris consequat molestie leo id efficitur. Cras fermentum, quam ac fermentum gravida, tortor elit tempus sem, nec gravida risus lacus non arcu. Nullam pellentesque, nisi eget laoreet scelerisque, lorem nulla suscipit eros, quis aliquam leo nisi a eros.</p>
+                    <p class="user"><b id="user"></b></p>
+                    <p id="instatexto"></p>
                     <div>
                         <div class="iconecurtidas">
                             <img src="img/curtida.png" alt="">

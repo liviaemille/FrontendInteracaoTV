@@ -50,9 +50,25 @@ function iniciar() {
         "User": "@mariaantonia",
         "URLfoto": "img/curtida.png",
         "posts" : ["when an unknown printer took", "a galley of type and scrambled", "it to make a type specimen book."]
-    }
-    ];
-    let usuarioInstagram = ["@liviaemille", "@mariosoares", "@toinhabigshoes"];
+    }];
+
+    let usuarioInstagram = [{
+        "User": "@liviaemille",
+        "URLfoto" : "img/gatinho.jpg",
+        "textopub" : "@maria #hashtag ipsum dolor sit amet, consectetur adipiscing elit. Fusce faucibus turpis id massa ultricies fringilla. Cras massa dolor, tempus nec ullamcorper at, consequat sed odio. Vivamus vel purus luctus, sollicitudin mi ac, luctus justo."
+    },
+    {
+        "User" : "@mariosoares", 
+        "URLfoto" : "img/qrcodeteste.png",
+        "textopub": "Mauris consequat molestie leo id efficitur. Cras fermentum, quam ac fermentum gravida, tortor elit tempus sem, nec gravida risus lacus non arcu. Nullam pellentesque, nisi eget laoreet scelerisque, lorem nulla suscipit eros, quis aliquam leo nisi a eros."
+        
+    },
+    {
+        "User":"@toinhabigshoes",
+        "URLfoto": "img/paisagem.jpg",
+        "textopub" : "Cras massa dolor, tempus nec ullamcorper at, consequat sed odio. Vivamus vel purus luctus, sollicitudin mi ac, luctus justo. Mauris consequat molestie leo id efficitur. Cras fermentum, quam ac fermentum gravida, tortor elit tempus sem, nec gravida risus lacus non arcu."
+    }];
+
     let noticiasRSS = [{
         "Titulo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "Conteudo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -66,8 +82,9 @@ function iniciar() {
 ];
     $('body').find('.conteiner').each(function () {
         let div = this;
-        let indice = Math.floor(Math.random() * usuarioTwitter.length);
-        iniciarAnimation($(div), usuarioTwitter, indice);
+        let indiceins = Math.floor(Math.random() * usuarioInstagram.length);
+        let indicetwi = Math.floor(Math.random() * usuarioTwitter.length);
+        iniciarAnimation($(div), usuarioTwitter, indicetwi, usuarioInstagram, indiceins);
     });
 
     setTimeout('iniciar()', 2000);
@@ -75,26 +92,32 @@ function iniciar() {
 
 
 //Enviando os parametros certos para a função replace_text
-function iniciarAnimation(div, obj, indice) {
+function iniciarAnimation(div, objt, indicet, obji, indicei) {
     div.show();
     // Trata postagens do twitter
-    $("#username").html(obj[indice]["User"])
-    $("#nome_do_usuario").html(obj[indice]["Nome"])
-    $("#twittexto").html(obj[indice]["posts"][Math.floor(Math.random() * obj[indice]["posts"].length)]);
-    $('#fotoperfil').css("background-image", "url("+obj[indice]['URLfoto']+")");
-    div.find('#twittexto').each(function(){
+    div.find(".muraltwitter").each(function(){
+        $("#username").html(objt[indicet]["User"])
+        $("#nome_do_usuario").html(objt[indicet]["Nome"])
+        $("#twittexto").html(objt[indicet]["posts"][Math.floor(Math.random() * objt[indicet]["posts"].length)]);
+        $('#fotoperfil').css("background-image", "url("+objt[indicet]['URLfoto']+")");
+
+        div.find('#twittexto').each(function(){
         replace_text(this, false);
+        })
     })
 
-
     // Trata postagens do instagram
-    current = obj.indexOf($("#instatexto").text()) + 1
-    if (current === -1) {
-        current = 0
-    }
-    div.find('.textopost').each(function () {
+
+    div.find(".mural").each(function(){
+        $(".publicacao").css("background-image", "url("+obji[indicei]['URLfoto']+")");
+        $('#user').html(obji[indicei]["User"]);
+        $('#instatexto').html(obji[indicei]["textopub"]);
+        
+        div.find('#instatexto').each(function () {
         replace_text(this, true);
-    });
+        });
+    })
+    
 
     // Transições RSS
     div.find('.titulonoticia').each(function(){
