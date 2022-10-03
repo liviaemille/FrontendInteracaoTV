@@ -43,29 +43,29 @@ function iniciar() {
         "Nome": "Mario Soares",
         "User": "@mariosoares",
         "URLfoto" : "img/gatinho.jpg",
-        "posts" : ["Lorehgjm Ipsum hadhasjdaskldjalsdjas been", "the inaskdasjldldustry's standard dummy",  "text evelkasdjlkdsjaldjadr since the 1500s"]
+        "posts" : ["Lorehgjm Ipsum hadhasjdaskldjalsdjas been lorem lkjsfk klsjflks jksdfkj jkdfkjsd kjdfksd fkjdsfs jdkfjksd jkdhfkjd <br> kshdaskjha sdhakjdhkjsldk", "the inaskdasjldldustry's standard dummy",  "text evelkasdjlkdsjaldjadr since the 1500s"]
     }, 
     {
         "Nome": "Maria Antônia",
         "User": "@mariaantonia",
-        "URLfoto": "img/curtida.png",
+        "URLfoto": "<img src='img/aslam.jpg' alt=''>",
         "posts" : ["when an unknown printer took", "a galley of type and scrambled", "it to make a type specimen book."]
     }];
 
     let usuarioInstagram = [{
         "User": "@liviaemille",
-        "URLfoto" : "img/gatinho.jpg",
+        "URLfoto" : "<img src='img/gatinho.jpg' alt=''>",
         "textopub" : "@maria #hashtag ipsum dolor sit amet, consectetur adipiscing elit. Fusce faucibus turpis id massa ultricies fringilla. Cras massa dolor, tempus nec ullamcorper at, consequat sed odio. Vivamus vel purus luctus, sollicitudin mi ac, luctus justo."
     },
     {
         "User" : "@mariosoares", 
-        "URLfoto" : "img/qrcodeteste.png",
+        "URLfoto" : "<img src='img/qrcodeteste.png' alt=''>",
         "textopub": "Mauris consequat molestie leo id efficitur. Cras fermentum, quam ac fermentum gravida, tortor elit tempus sem, nec gravida risus lacus non arcu. Nullam pellentesque, nisi eget laoreet scelerisque, lorem nulla suscipit eros, quis aliquam leo nisi a eros."
         
     },
     {
         "User":"@toinhabigshoes",
-        "URLfoto": "img/paisagem.jpg",
+        "URLfoto": "<img src='img/paisagem.jpg' alt=''>",
         "textopub" : "Cras massa dolor, tempus nec ullamcorper at, consequat sed odio. Vivamus vel purus luctus, sollicitudin mi ac, luctus justo. Mauris consequat molestie leo id efficitur. Cras fermentum, quam ac fermentum gravida, tortor elit tempus sem, nec gravida risus lacus non arcu."
     }];
 
@@ -73,13 +73,13 @@ function iniciar() {
         "Titulo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "Conteudo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "Background": "img/paisagem.jpg",
-        "QRcode" : "img/gatinho.jpg"
+        "QRcode" : "<img src='img/aslam.jpg' alt=''>"
     },
     {
         "Titulo" : "Morbi ullamcorper leo mi, non vulputate ipsum volutpat et.",
         "Conteudo" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Background" : "img/paisagem2.jpg",
-        "QRcode" : "img/qrcodeteste.png"
+        "QRcode" : "<img src='img/qrcodeteste.png' alt=''>"
     }
 ];
     $('body').find('.conteiner').each(function () {
@@ -112,7 +112,7 @@ function iniciarAnimation(div, objt, indicet, obji, indicei, objr, indicer) {
     // Trata postagens do instagram
 
     div.find(".mural").each(function(){
-        $("#image").css("background-image", "url("+obji[indicei]['URLfoto']+")");
+        $("#image").html(obji[indicei]["URLfoto"]);
         $('#user').html(obji[indicei]["User"]);
         $('#instatexto').html(obji[indicei]["textopub"]);
         
@@ -128,7 +128,7 @@ function iniciarAnimation(div, objt, indicet, obji, indicei, objr, indicer) {
             $(this).html(objr[indicer]["Titulo"]);
         });
         $('#links').html(objr[indicer]["Conteudo"]);
-        $('.qrcode').css("background-image", "url("+objr[indicer]["QRcode"]+")")
+        $('.qrcode').html(objr[indicer]['QRcode'])
         $('.bgrss').css("background-image", "url("+objr[indicer]["Background"]+")")
     })
     div.find('#blocotransicao').each(function(){
