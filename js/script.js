@@ -37,13 +37,13 @@ function iniciar() {
         "Nome": "Livia Émille",
         "User": "@liviaemille",
         "URLfoto" : "img/aslam.jpg",
-        "posts" : ["@livinhadograu  dlakjskdlajdf sdlkaj s", "ldkjaklsdjaljd alksdjlaksjd açlsdaçskdjaç sldkjaçsdlka", "#Lorem Ipsum is simply dummy text of the printing and typesetting industry."]
+        "posts" : ["@livinhadograu  dlakjskdlajdf slajlaksjdklsdjaskdlkaj s", "ldkjaklsdjaljd alksdjlaksjd açlsdaçskdjaç sldkjaçsdlka", "#Lorem Ipsum is simply dummy text of the printing and typesetting industry."]
     },
     {
         "Nome": "Mario Soares",
         "User": "@mariosoares",
         "URLfoto" : "img/gatinho.jpg",
-        "posts" : ["Lorehgjm Ipsum has been", "the industry's standard dummy",  "text ever since the 1500s"]
+        "posts" : ["Lorehgjm Ipsum hadhasjdaskldjalsdjas been", "the inaskdasjldldustry's standard dummy",  "text evelkasdjlkdsjaldjadr since the 1500s"]
     }, 
     {
         "Nome": "Maria Antônia",
@@ -90,7 +90,7 @@ function iniciar() {
         iniciarAnimation($(div), usuarioTwitter, indicetwi, usuarioInstagram, indiceins, noticiasRSS, indicerss);
     });
 
-    setTimeout('iniciar()', 2000);
+    setTimeout('iniciar()', 5000);
 }
 
 
@@ -112,7 +112,7 @@ function iniciarAnimation(div, objt, indicet, obji, indicei, objr, indicer) {
     // Trata postagens do instagram
 
     div.find(".mural").each(function(){
-        $(".publicacao").css("background-image", "url("+obji[indicei]['URLfoto']+")");
+        $("#image").css("background-image", "url("+obji[indicei]['URLfoto']+")");
         $('#user').html(obji[indicei]["User"]);
         $('#instatexto').html(obji[indicei]["textopub"]);
         
@@ -124,10 +124,17 @@ function iniciarAnimation(div, objt, indicet, obji, indicei, objr, indicer) {
 
     // Transições RSS
     div.find('.muralnoticias').each(function(){
-        $('#titulonoticia').html(objr[indicer]["Titulo"]);
+        $('#titulonoticia').each(function(){
+            $(this).html(objr[indicer]["Titulo"]);
+        });
         $('#links').html(objr[indicer]["Conteudo"]);
         $('.qrcode').css("background-image", "url("+objr[indicer]["QRcode"]+")")
         $('.bgrss').css("background-image", "url("+objr[indicer]["Background"]+")")
+    })
+    div.find('#blocotransicao').each(function(){
+        $(this).slideUp(slow, function(){
+            $(this).hide();
+        })
     })
 }
 
