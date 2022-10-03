@@ -23,12 +23,9 @@
 
 
 
- /* background todas as telas */
+ /* background todas as telas
  .conteiner {
-    height: 100vh;
-    width: 100vw;
-    background-repeat: no-repeat;
- }
+ }*/
 
  .bginstagram{
     background: #f09433;  
@@ -41,10 +38,12 @@
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
+    background-color: #800020;
  }
 
  .bgtwitter {
      background-color: #daf4fd;
+     height: 100vh;
  }
 
 
@@ -52,6 +51,7 @@
  /* cabeçalho fixo (logo if + relogio) */
  .fixo {
     position: relative;
+    display: inline-block;
     width: 12vw;
     height: 50vh;
     left: 85vw;
@@ -59,8 +59,10 @@
  }
 
  .logo {
-    left: 15%;
+    position: relative;
+    margin-left: 7%;
     width: 75%;
+    margin: auto
  }
 
  .logo img{
@@ -76,32 +78,63 @@
     border-radius: 3%;
     height: 35%;
     width: 85%;
-    margin-top: 10%;
+    top: 5%;
+    margin: auto;
     text-align: center;
+    position: relative;
  }
 
  .diadata {
     margin: 0;
     border: 0;
-    font-size: 10pt;
     padding-top: 10px;
     padding-bottom: 1px;
-    padding-left: 9px;
+    padding-left: 9px;;
     padding-right: 9px;
  }
 
  .hora {
     margin: 0;
     border: 0;
-    font-size: 17pt;
  }
 
-
+@media (max-width: 1920px)
+{
+    .relogio{
+        width: 100%;
+    }
+    .diadata {
+        font-size: 13pt;
+    }
+    .hora{
+        font-size: 20pt;
+    }
+    .legenda {
+        font-size: 14pt;
+    }
+    .curtidas{
+        font-size: 13pt;
+    }
+    .muraltwitter {
+        font-size: 18pt;
+    }
+}
+@media (max-width: 1160px){
+    .diadata{
+        font-size: 8pt;
+    }
+    .hora{
+        font-size: 12pt
+    }
+    .muraltwitter{
+        font-size: 12pt;
+    }
+}
  
  /* logo rede social */
  .logocanto {
-     position: fixed;
-     top: 77%;
+     position:fixed;
+     top: 80%;
      width: 8vw;
      left: 4%;
  }
@@ -109,22 +142,21 @@
  .logocanto img{
     filter: drop-shadow(4px 2px 1px rgba(34, 34, 34, 0.76));
      width: 100%;
-     height: 100%;
+     height: auto;
  }
 
  .logorss{
     transform: rotate(47deg);
 }
 
-
-
  /* mural das publicações do Istagram*/
  .mural {
-    position: relative;
+    position: fixed;
      width: 65%;
-     height: 65%;
-     left: 49%;
-     transform: translate(-50%, -50%);
+     height: 58%;
+     left: 47%;
+     transform: translatex(-50%);
+     top: 10%;
  }
  
  .legenda{
@@ -133,10 +165,9 @@
     display: inline-block;
     position: relative;
     padding: 3%;
-    width: 42%;
+    width: 45%;
     left: 52%;
     min-height: 50%;
-    max-height: 100%;
     border-radius: 10px;
     font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
     /*font-size: clamp(1em, 1em + 1vw, 1.1em); 
@@ -165,10 +196,11 @@
  }
 
  .publicacao {
-    position: absolute;
+    padding-bottom: 0;
+    background-color: white;
+    position:fixed;
     display: inline-block;
     width: 49%;
-    height: 100%;
     border-radius: 10px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -177,93 +209,104 @@
     border-width: 5px;
     /*top: 2%;*/
  }
-
+.publicacao img {
+    width: 100%;
+    height: 100%;
+}
  .shadow {
-    box-shadow: 6px 5px 4px 0px rgba(34, 34, 34, 0.76);
+    box-shadow: 5px 4px 10px 0px rgba(34, 34, 34, 0.76);
  }
 
 
 
  /*RSS */
  .muralnoticias {
-     position: absolute;
-     transform: translateX(-50%);
-     left: 45%;
-     width: 70vw;
-     top: 8vh;
+    position: fixed;
+    width:65%;
+    transform: translatex(-50%);
+    top: 15%;
+    left: 46%;
     color: white;
  }
 
  .titulonoticia{
      text-align: center;
+     padding-left: 2%;
+     padding-right: 2%;
  }
 
  .links{
      padding-left: 5%;
-     padding-top: 5%;
+     padding-right: 5%;
      font-size: 20px;
+     margin-top: 10%;
  }
 
  .qrcode {
      width: 10vw;
-     height: 20vh;
-     position: absolute;
-     left: 85vw;
-     top: 75vh;
-     background-size: cover;
-    background-repeat: no-repeat;
+     height: 18vh;
+     left: 86vw;
+     top: 24%;
+     background-color: white;
+     position: relative;
+     padding: 0;
+     margin: 0;
+     border: 0;
  }
 
-
+.qrcode img{
+    width: 100%;
+    height: auto;
+}
 
  /* Mural Twitter */
 .muraltwitter {
-    margin-left: 15%;
+    top: 17%;
+    left: 45%;
+    transform: translateX(-50%);
+    position:fixed;
     background-color: white;
-    width: 65%;
-    left: 15%;
-    height: 50%;
-    overflow: hidden;
-    transform: translatey(-50%);
-    font-size: 22px;
+    width: 58%;
+    min-height: 35%;
     border-radius: 2%;
+    padding: 1%;
     font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
 }
 
 .fotoperfil {
     box-shadow: 4px 3px 4px 0px rgba(34, 34, 34, 0.76);
-    /*background-color: #d8e0b6;*/
     border-radius: 50%;
-    position: relative;
-    display: inline-block;
-    margin-top: 4%;
-    margin-left: 5%;  
     background-size: cover;
     background-repeat: no-repeat;
-    height: 140%;
     width: 12%;
+    display: inline-block;
+    padding-top: calc((4/4) * 12%);
+    margin-top: 2%;
+    margin-left: 2%;
  }
 
-.tweet {
-    position: relative;   
+.tweet {  
+    position: relative;
     text-align: justify;
-    padding-left: 21%;
-    padding-right: 7%;
-    top: 15%;
+    margin-top: 14%;
+    padding-left: 18%;
+    padding-right: 5%;
+    padding-bottom: 6%;
 }
 
 .perfil {
     width: 100%;
-    height: 20%;
-    /*background-color:rgb(226, 129, 65);*/
+    height: 31%;
+    position: relative;
+}
+.fotoperfil, .usuario{
+    float: left;
 }
 
 .usuario {
     display: inline-block;
-    /*background-color: #d8e0b6;*/
-    transform: translateY(-80%);
-    padding-left: 3%;
-    font-size: 16pt;
+    padding-left: 4%;
+    margin-top: 2%
 }
 
 .user {

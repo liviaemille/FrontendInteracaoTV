@@ -13,42 +13,36 @@
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
     </head>
-    <body onload="time(); iniciar();">
-        <div class="conteiner bgtwitter">
-            <div class= "fixo">
-                <div class="logo">
-                    <img src="img/logoif.png"  alt="">
-                </div>
-                <div class="relogio" id="relogio">
-                    <div class= "diadata" id="diadata"></div>
-                    <div class = "hora"  id="hora"></div>
-
-                </div>
-            </div>
-
-            <!-- Publicação do Twitter-->
-            <div class="muraltwitter shadow" style="border: 2px;">
-                <div class="perfil" style="border: 2px;">
-                    <div class="fotoperfil" id="fotoperfil" style="background-image: url(img/gatinho.jpg);"></div>
-                    <div class="usuario">
-                        <p><b id="nome_do_usuario">Nome do usuario</b> <i class="user" id="username">@user</i></p>
+    <body onload="time(); iniciar()">
+            <div class="conteiner bgtwitter">
+                <div class= "fixo">
+                    <div class="logo">
+                        <img src="img/logoif.png"  alt="">
                     </div>
-                    
+                    <div class="relogio" id="relogio">
+                        <div class= "diadata diadatagrande" id="diadata"></div>
+                        <div class = "hora horagrande"  id="hora"></div>
+                    </div>
                 </div>
-                <div class="tweet post">
-                    <div id="twittexto" class="text"></div>
+                
+                <!-- Publicação do Twitter-->
+                <div class="muraltwitter shadow">
+                    <div class="perfil">
+                        <div class="fotoperfil" id="fotoperfil" style="background-image: url(img/gatinho.jpg);"></div>
+                        <div class="usuario">
+                            <p><b id="nome_do_usuario">Nome do usuario</b> <i class="user" id="username">@user</i></p>
+                        </div>
+                
+                    </div>
+                    <div class="tweet post">
+                        <div id="twittexto" class="text"></div>
+                    </div>
                 </div>
-
+                
+                <div class="logocanto" id="logotwitter">
+                    <img src="img/logotwitter.png" alt="">
+                </div>
             </div>
-            
-            <div class="logocanto" id="logotwitter">
-                <img src="img/logotwitter.png" alt="">
-            </div>
-
-        </div>
-        <!--<div class="blocotransicao" id="blocotransicao">
-            <img src="img/Simbolo.jfif" class="logotransicao">
-        </div>
-    -->
+        
     </body>
 </html>
