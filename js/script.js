@@ -90,7 +90,7 @@ function iniciar() {
         iniciarAnimation($(div), usuarioTwitter, indicetwi, usuarioInstagram, indiceins, noticiasRSS, indicerss);
     });
 
-    setTimeout('iniciar()', 5000);
+    setTimeout('iniciar()', 10000);
 }
 
 
@@ -123,20 +123,35 @@ function iniciarAnimation(div, objt, indicet, obji, indicei, objr, indicer) {
     
 
     // Transições RSS
+    div.find('.titulonoticia').each(function(){
+            $(this).delay(1000).animate(
+                {left: '500px'},
+                {opacity: 1.0},
+                {duration : 5000}
+            )
+    })
+
     div.find('.muralnoticias').each(function(){
         $('#titulonoticia').each(function(){
             $(this).html(objr[indicer]["Titulo"]);
+            
         });
         $('#links').html(objr[indicer]["Conteudo"]);
         $('.qrcode').html(objr[indicer]['QRcode'])
         $('.bgrss').css("background-image", "url("+objr[indicer]["Background"]+")")
     })
-    div.find('#blocotransicao').each(function(){
-        $(this).slideUp(slow, function(){
-            $(this).hide();
-        })
+
+    div.find('#image').each(function(){
+        $(this).animate(
+            {left : '250px'},
+            {opacity : 1.0}
+        )
     })
-}
+    div.find('#blocotransicao').each(function(){
+        $(this).slideUp(slow);
+        $(this).hide();
+    })
+
 
 //Função para pegar conteúdo texto dos posts e enviar para as respectivas funções de formatação
 function replace_text(div, instagram) {
@@ -166,4 +181,4 @@ function highlight_instagram(words) {
     words = words.replace(/(^|\s)(https?:\/\/[^\s,;!$%@*]+)/gi, "$1<span class='url'>$2</span>");
 
     return words;
-}
+}}
