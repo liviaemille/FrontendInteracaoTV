@@ -29,7 +29,7 @@
  .bgindex{
     background-size: cover;
     background-repeat: no-repeat;
-    height: 10vh;
+    height: 100vh;
  }
 
  .bginstagram{
@@ -56,16 +56,16 @@
  .fixo {
     position: relative;
     display: inline-block;
-    width: 12vw;
+    width: 10vw;
     height: 50vh;
-    left: 85vw;
+    left: 87vw;
     top: 10vh; 
  }
 
  .logo {
     position: relative;
     margin-left: 7%;
-    width: 75%;
+    width:75%;
     margin: auto
  }
 
@@ -80,8 +80,7 @@
     font-family: 'Segoe UI', sans-serif;
     background-color: rgba(233, 248, 226, 0.623);
     border-radius: 3%;
-    height: 35%;
-    width: 85%;
+    width: 100%;
     top: 5%;
     margin: auto;
     text-align: center;
@@ -100,24 +99,32 @@
  .hora {
     margin: 0;
     border: 0;
+    padding-bottom: 8%;
  }
-
-@media (max-width: 1920px)
-{
-    .relogio{
-        width: 100%;
-    }
+@media (max-width : 2550px){
     .diadata {
-        font-size: 13pt;
+        font-size: 20pt;
     }
     .hora{
-        font-size: 20pt;
+        font-size: 34pt;
+    }
+    .legenda {
+        font-size: 18pt;
+    }
+    .muraltwitter {
+        font-size: 24pt;
+    }
+}
+@media (max-width: 1920px)
+{
+    .diadata {
+        font-size: 16pt;
+    }
+    .hora{
+        font-size: 28pt;
     }
     .legenda {
         font-size: 14pt;
-    }
-    .curtidas{
-        font-size: 13pt;
     }
     .muraltwitter {
         font-size: 18pt;
@@ -131,6 +138,9 @@
         font-size: 12pt
     }
     .muraltwitter{
+        font-size: 14pt;
+    }
+    .legenda{
         font-size: 12pt;
     }
 }
@@ -168,10 +178,10 @@
     background-color: white;
     display: inline-block;
     position: relative;
-    padding: 3%;
-    width: 45%;
+    padding: 2% 5% 1%;
+    width: 42%;
     left: 52%;
-    min-height: 60%;
+    min-height: 40%;
     border-radius: 10px;
     font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
  }
@@ -250,7 +260,7 @@
     position:fixed;
     background-color: white;
     width: 58%;
-    min-height: 35%;
+    min-height: 30%;
     border-radius: 2%;
     padding: 1%;
     font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;

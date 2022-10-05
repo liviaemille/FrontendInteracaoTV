@@ -25,7 +25,7 @@ function time() {
         segundo = "0" + segundo;
     }
 
-    document.getElementById('diadata').innerHTML = (dias + ", " + data);
+    document.getElementById('diadata').innerHTML = (dias + ", <br>" + data);
     document.getElementById('hora').innerHTML = (hora + ":" + minuto + ":" + segundo);
 
     setTimeout('time()', 500);
