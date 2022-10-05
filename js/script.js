@@ -48,7 +48,7 @@ function iniciar() {
     {
         "Nome": "Maria Antônia",
         "User": "@mariaantonia",
-        "URLfoto": "<img src='img/aslam.jpg' alt=''>",
+        "URLfoto": "img/curtida.png",
         "posts": ["when an unknown printer took", "a galley of type and scrambled", "it to make a type specimen book."]
     }];
 
@@ -82,26 +82,25 @@ function iniciar() {
         "QRcode": "<img src='img/qrcodeteste.png' alt=''>"
     }
     ];
+    
+    let backgroundIndex = ["img/paisagem.jpg", "img/paisagem2.jpg", "img/twitter.jpg"];
+
+
     $('body').find('.conteiner').each(function () {
         let div = this;
         let indicerss = Math.floor(Math.random() * noticiasRSS.length);
         let indiceins = Math.floor(Math.random() * usuarioInstagram.length);
         let indicetwi = Math.floor(Math.random() * usuarioTwitter.length);
-        iniciarAnimation($(div), usuarioTwitter, indicetwi, usuarioInstagram, indiceins, noticiasRSS, indicerss);
+        let indicebgi = Math.floor(Math.random() * backgroundIndex.length);
+        iniciarAnimation($(div), usuarioTwitter, indicetwi, usuarioInstagram, indiceins, noticiasRSS, indicerss, backgroundIndex, indicebgi);
     });
 
-    setTimeout('iniciar()', 10000);
+    setTimeout('iniciar()', 15000);
 }
 
 
 //Enviando os parametros certos para a função replace_text
-function iniciarAnimation(div, objt, indicet, obji, indicei, objr, indicer) {
-     div.show();
-    $(".perfil").hide()
-    $(".tweet").hide()
-
-    $(".perfil").fadeIn(2000)
-    $(".tweet").fadeIn(2000)
+function iniciarAnimation(div, objt, indicet, obji, indicei, objr, indicer, index, indicebgi) {
 
     // Trata postagens do twitter
     div.find(".muraltwitter").each(function () {
@@ -109,6 +108,11 @@ function iniciarAnimation(div, objt, indicet, obji, indicei, objr, indicer) {
         $("#nome_do_usuario").html(objt[indicet]["Nome"])
         $("#twittexto").html(objt[indicet]["posts"][Math.floor(Math.random() * objt[indicet]["posts"].length)])
         $('#fotoperfil').css("background-image", "url(" + objt[indicet]['URLfoto'] + ")")
+
+        $(".perfil").hide()
+        $(".tweet").hide()
+        $(".perfil").fadeIn(2000)
+        $(".tweet").fadeIn(2000)
 
         div.find('#twittexto').each(function () {
             replace_text(this, false);
@@ -123,6 +127,13 @@ function iniciarAnimation(div, objt, indicet, obji, indicei, objr, indicer) {
         $('#user').html(obji[indicei]["User"]);
         $('#instatexto').html(obji[indicei]["textopub"]);
 
+        $('.user').hide().fadeIn(3000)
+        $('#instatexto').hide().fadeIn(3000)
+        $('#image').hide().animate(
+            {opacity: 1.0,
+            duration: 1000}
+        ).slideDown(1000)
+
         div.find('#instatexto').each(function () {
             replace_text(this, true);
         })
@@ -130,36 +141,35 @@ function iniciarAnimation(div, objt, indicet, obji, indicei, objr, indicer) {
 
 
     // Transições RSS
-    div.find('.titulonoticia').each(function () {
-        $(this).delay(1000).animate(
-            { left: '500px' },
-            { opacity: 1.0 },
-            { duration: 5000 }
-        )
-    })
-
     div.find('.muralnoticias').each(function () {
-        $('#titulonoticia').each(function () {
-            $(this).html(objr[indicer]["Titulo"]);
-
-        });
+        //$('.bgrss').delay(200).animate(
+          //  {opacity: 0}, 1000, function(){
+            //    $(this).css("background-image", "url(" + objr[indicer]["Background"] + ")").delay(1000).animate(
+              //      {opacity: 1}, 2000
+                //)
+            //}
+        //)
+        $('.bgrss').css("background-image", "url(" + objr[indicer]["Background"] + ")");
+        $('#titulonoticia').html(objr[indicer]["Titulo"]);
         $('#links').html(objr[indicer]["Conteudo"]);
         $('.qrcode').html(objr[indicer]['QRcode'])
-        $('.bgrss').css("background-image", "url(" + objr[indicer]["Background"] + ")")
-    })
+        
+        
 
-    div.find('#image').each(function () {
-        $(this).animate(
-            { left: '250px' },
-            { opacity: 1.0 }
-        )
-    })
-    div.find('#blocotransicao').each(function () {
-        $(this).slideUp(slow);
-        $(this).hide();
+        $(this).hide().delay(500).slideDown(2500)
+        $('.qrcode').hide().delay(500).animate(
+            {opacity: 1.0,
+            duration: 1000}
+        ).slideDown()
     })
 
 
+    //Transições index
+    div.find('.bgindex').each(function(){
+        $(this).css("background-image", "url("+index[indicebgi]+")");
+    })
+
+}
     //Função para pegar conteúdo texto dos posts e enviar para as respectivas funções de formatação
     function replace_text(div, instagram) {
         var curInnerHTML = div.innerHTML;
@@ -189,5 +199,3 @@ function iniciarAnimation(div, objt, indicet, obji, indicei, objr, indicer) {
 
         return words;
     }
-
-}
