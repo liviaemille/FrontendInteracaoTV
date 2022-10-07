@@ -118,10 +118,10 @@
 @media (max-width: 1920px)
 {
     .diadata {
-        font-size: 16pt;
+        font-size: 12pt;
     }
     .hora{
-        font-size: 28pt;
+        font-size: 22pt;
     }
     .legenda {
         font-size: 14pt;
@@ -178,7 +178,7 @@
     background-color: white;
     display: inline-block;
     position: relative;
-    padding: 2% 5% 1%;
+    padding: 2% 5% 3%;
     width: 42%;
     left: 52%;
     min-height: 40%;
