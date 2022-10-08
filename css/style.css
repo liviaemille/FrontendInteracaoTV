@@ -1,32 +1,10 @@
  body {
-     padding: 0%;
-     margin: 0%;
-     border: 0%;
+     padding: 0;
+     margin: 0;
+     border: 0;
  }
-
-
- /*efeitos de transicao*/
- .blocotransicao{
-     position: absolute;
-     background-color: white;
-     width: 100%;
-     height: 100%;
-     /*transform: translateY(-100%);*/
- }
- .blocotransicao img{
-     position: relative;
-     transform: translate(-50%, -50%);
-     left: 50%;
-     top: 50%;
-     width: 19%;
- }
-
-
-
- /* background todas as telas
- .conteiner {
- }*/
- .bgindex{
+ /* background todas as telas*/
+ .bgnoticias{
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -62,14 +40,14 @@
     top: 10vh; 
  }
 
- .logo {
+ .logo-if {
     position: relative;
     margin-left: 7%;
     width:75%;
     margin: auto
  }
 
- .logo img{
+ .logo-if img{
     width: 100%;
     filter: drop-shadow(7px 7px 2px rgba(34, 34, 34, 0.76));
  }
@@ -101,21 +79,8 @@
     border: 0;
     padding-bottom: 8%;
  }
-@media (max-width : 2550px){
-    .diadata {
-        font-size: 20pt;
-    }
-    .hora{
-        font-size: 34pt;
-    }
-    .legenda {
-        font-size: 18pt;
-    }
-    .muraltwitter {
-        font-size: 24pt;
-    }
-}
-@media (max-width: 1920px)
+
+@media (min-width: 1100px) and (max-width: 1920px)
 {
     .diadata {
         font-size: 12pt;
@@ -123,25 +88,40 @@
     .hora{
         font-size: 22pt;
     }
-    .legenda {
+    .legenda-instagram {
         font-size: 14pt;
     }
-    .muraltwitter {
+    .mural-twitter {
         font-size: 18pt;
     }
 }
-@media (max-width: 1160px){
+@media (min-width: 800px) and (max-width: 1100px){
     .diadata{
         font-size: 8pt;
     }
     .hora{
         font-size: 12pt
     }
-    .muraltwitter{
+    .mural-twitter{
         font-size: 14pt;
     }
-    .legenda{
+    .legenda-instagram{
         font-size: 12pt;
+    }
+}
+
+@media (max-width: 800px) {
+    .diadata{
+        font-size: 6pt;
+    }
+    .hora{
+        font-size: 10pt
+    }
+    .mural-twitter{
+        font-size: 12pt;
+    }
+    .legenda-instagram{
+        font-size: 8pt;
     }
 }
  
@@ -164,7 +144,7 @@
 }
 
  /* mural das publicações do Istagram*/
- .mural {
+ .mural-instagram {
     position: fixed;
      width: 65%;
      height: 58%;
@@ -173,7 +153,7 @@
      top: 10%;
  }
  
- .legenda{
+ .legenda-instagram{
     text-align: justify;
     background-color: white;
     display: inline-block;
@@ -186,7 +166,7 @@
     font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
  }
 
- .publicacao {
+ .publicacao-instagram {
     padding-bottom: 0;
     background-color: white;
     position:fixed;
@@ -200,7 +180,7 @@
     border-width: 5px;
     /*top: 2%;*/
  }
-.publicacao img {
+.publicacao-instagram img {
     width: 100%;
     height: 100%;
     padding: 0
@@ -212,7 +192,7 @@
 
 
  /*RSS */
- .muralnoticias {
+ .mural-noticias {
     position: fixed;
     width:65%;
     transform: translatex(-50%);
@@ -222,13 +202,13 @@
     background-color:#ffffff42;
  }
 
- .titulonoticia{
+ .titulo-noticia{
      text-align: center;
      padding-left: 2%;
      padding-right: 2%;
  }
 
- .links{
+ .conteudo-noticia{
      padding-left: 5%;
      padding-right: 5%;
      font-size: 20px;
@@ -237,11 +217,9 @@
 
  .qrcode {
      width: 10vw;
-     height: 18vh;
-     left: 86vw;
-     top: 24%;
-     background-color: white;
-     position: relative;
+     left: 87vw;
+     top: 73%;
+     position: fixed;
      padding: 0;
      margin: 0;
      border: 0;
@@ -253,7 +231,7 @@
 }
 
  /* Mural Twitter */
-.muraltwitter {
+.mural-twitter {
     top: 17%;
     left: 45%;
     transform: translateX(-50%);
@@ -266,7 +244,7 @@
     font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
 }
 
-.fotoperfil {
+.foto-perfil {
     box-shadow: 4px 3px 4px 0px rgba(34, 34, 34, 0.76);
     border-radius: 50%;
     background-size: cover;
@@ -287,16 +265,16 @@
     padding-bottom: 6%;
 }
 
-.perfil {
+.perfil-twitter {
     width: 100%;
     height: 31%;
     position: relative;
 }
-.fotoperfil, .usuario{
+.foto-perfil, .usuario-twitter{
     float: left;
 }
 
-.usuario {
+.usuario-twitter {
     display: inline-block;
     padding-left: 4%;
     margin-top: 2%

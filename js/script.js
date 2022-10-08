@@ -103,15 +103,15 @@ function iniciar() {
 function iniciarAnimation(div, objt, indicet, obji, indicei, objr, indicer, index, indicebgi) {
 
     // Trata postagens do twitter
-    div.find(".muraltwitter").each(function () {
+    div.find(".mural-twitter").each(function () {
         $("#username").html(objt[indicet]["User"])
-        $("#nome_do_usuario").html(objt[indicet]["Nome"])
+        $("#nome-usuario").html(objt[indicet]["Nome"])
         $("#twittexto").html(objt[indicet]["posts"][Math.floor(Math.random() * objt[indicet]["posts"].length)])
-        $('#fotoperfil').css("background-image", "url(" + objt[indicet]['URLfoto'] + ")")
+        $('#foto-perfil').css("background-image", "url(" + objt[indicet]['URLfoto'] + ")")
 
-        $(".perfil").hide()
+        $(".perfil-twitter").hide()
         $(".tweet").hide()
-        $(".perfil").fadeIn(2000)
+        $(".perfil-twitter").fadeIn(2000)
         $(".tweet").fadeIn(2000)
 
         div.find('#twittexto').each(function () {
@@ -122,7 +122,7 @@ function iniciarAnimation(div, objt, indicet, obji, indicei, objr, indicer, inde
 
     // Trata postagens do instagram
 
-    div.find(".mural").each(function () {
+    div.find(".mural-instagram").each(function () {
         $("#image").html(obji[indicei]["URLfoto"]);
         $('#user').html(obji[indicei]["User"]);
         $('#instatexto').html(obji[indicei]["textopub"]);
@@ -141,21 +141,12 @@ function iniciarAnimation(div, objt, indicet, obji, indicei, objr, indicer, inde
 
 
     // Transições RSS
-    div.find('.muralnoticias').each(function () {
-        //$('.bgrss').delay(200).animate(
-          //  {opacity: 0}, 1000, function(){
-            //    $(this).css("background-image", "url(" + objr[indicer]["Background"] + ")").delay(1000).animate(
-              //      {opacity: 1}, 2000
-                //)
-            //}
-        //)
+    div.find('.mural-noticias').each(function () {
         $('.bgrss').css("background-image", "url(" + objr[indicer]["Background"] + ")");
         $('#titulonoticia').html(objr[indicer]["Titulo"]);
-        $('#links').html(objr[indicer]["Conteudo"]);
+        $('#conteudo').html(objr[indicer]["Conteudo"]);
         $('.qrcode').html(objr[indicer]['QRcode'])
         
-        
-
         $(this).hide().delay(500).slideDown(2500)
         $('.qrcode').hide().delay(500).animate(
             {opacity: 1.0,
@@ -165,7 +156,7 @@ function iniciarAnimation(div, objt, indicet, obji, indicei, objr, indicer, inde
 
 
     //Transições index
-    div.find('.bgindex').each(function(){
+    div.find('.bgnoticias').each(function(){
         $(this).css("background-image", "url("+index[indicebgi]+")");
     })
 
